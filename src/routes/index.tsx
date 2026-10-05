@@ -94,10 +94,6 @@ function Hero() {
               Conhecer procedimentos
             </a>
           </Reveal>
-          <Reveal delay={750} className="mt-14 flex items-center gap-4 border-t border-border pt-6">
-            <span className="font-serif text-3xl">+3 mil</span>
-            <span className="text-sm text-muted-foreground">mulheres atendidas.</span>
-          </Reveal>
         </div>
 
         <div className="relative order-1 lg:order-2 lg:-mr-[max(2.5rem,calc((100vw-1320px)/2+2.5rem))] lg:h-[100svh]">
@@ -108,12 +104,13 @@ function Hero() {
             height={1440}
             eager
             delay={500}
-            className="aspect-[4/5] lg:aspect-auto lg:h-full"
+            className="hero-photo aspect-[4/5] lg:aspect-auto lg:h-full"
             imgClassName="object-[center_20%]"
           />
-          <p className="eyebrow absolute bottom-6 left-6 hidden !text-[0.6rem] !text-foreground/60 lg:block">
-            Estética • Naturalidade • Confiança
-          </p>
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 left-0 hidden w-14 bg-gradient-to-r from-background via-background/70 to-transparent lg:block"
+          />
         </div>
       </div>
     </section>
