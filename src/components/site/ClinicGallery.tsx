@@ -107,7 +107,7 @@ export function ClinicGallery({ slides }: { slides: Slide[] }) {
       </div>
 
       <figcaption className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-        {slides[active].caption}
+        {slides[active]?.caption}
       </figcaption>
     </figure>
   );
