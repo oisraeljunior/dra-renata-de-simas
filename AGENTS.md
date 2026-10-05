@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Procedures use native document scrolling with a sticky desktop introduction and an article-position-driven active index; avoid nested scroll containers so the page continues naturally after the last procedure.

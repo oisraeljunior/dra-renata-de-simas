@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Instagram, MessageCircle, Star } from "lucide-react";
 import { Header, Logo } from "@/components/site/Header";
 import { Reveal, RevealImage, PrimaryCta, waLink } from "@/components/site/primitives";
@@ -199,54 +200,77 @@ const PROCS = [
   },
 ];
 function Procedures() {
+  const [activeProcedure, setActiveProcedure] = useState(0);
+  const articles = useRef<Array<HTMLElement | null>>([]);
+
+  useEffect(() => {
+    let frame = 0;
+    const updateActive = () => {
+      frame = 0;
+      const focusLine = window.innerHeight * 0.45;
+      let current = 0;
+      articles.current.forEach((article, index) => {
+        if (article && article.getBoundingClientRect().top <= focusLine) current = index;
+      });
+      setActiveProcedure(current);
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateActive);
+    };
+    updateActive();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return (
-    <section id="procedimentos" className="bg-card py-24 md:py-36">
-      <div className="container-lux">
-        <div className="grid gap-8 lg:grid-cols-2 lg:items-end">
-          <div>
-            <Reveal>
-              <p className="eyebrow">Tratamentos</p>
-            </Reveal>
-            <Reveal delay={120} as="h2" className="mt-8 text-5xl leading-[1.02] md:text-7xl">
-              Procedimentos pensados <em className="font-light text-taupe">para você.</em>
-            </Reveal>
-          </div>
-          <Reveal delay={240}>
-            <p className="max-w-md leading-relaxed text-muted-foreground lg:ml-auto">
-              Protocolos personalizados para realçar seus traços, suavizar os sinais do tempo e preservar aquilo que torna você única.
-            </p>
-          </Reveal>
+    <section id="procedimentos" className="bg-background py-24 md:py-28">
+      <div className="container-lux grid items-start gap-14 lg:grid-cols-2 lg:gap-16">
+        <div className="procedures-intro lg:sticky lg:top-24">
+          <p className="eyebrow">Tratamentos</p>
+          <h2 className="procedures-heading mt-7 text-5xl leading-[1.02] xl:text-6xl">
+            Procedimentos<br />pensados para você.
+          </h2>
+          <p className="procedures-description mt-7 max-w-md leading-relaxed text-muted-foreground">
+            Protocolos personalizados para realçar seus traços, suavizar os sinais do tempo e preservar aquilo que torna você única.
+          </p>
+          <ol className="procedures-index mt-12 hidden space-y-6 lg:block" aria-label="Procedimentos">
+            {PROCS.map((p, i) => (
+              <li
+                key={p.n}
+                aria-current={activeProcedure === i ? "true" : undefined}
+                className={`flex items-baseline gap-3 font-serif text-2xl uppercase transition-colors duration-300 xl:text-3xl ${activeProcedure === i ? "font-bold text-primary" : "font-normal text-taupe"}`}
+              >
+                <span className="w-4 shrink-0" aria-hidden="true">{activeProcedure === i ? "–" : ""}</span>
+                <span>{p.n} — {p.name}</span>
+              </li>
+            ))}
+          </ol>
         </div>
 
-        <div className="mt-20 space-y-24 md:mt-32 md:space-y-40">
+        <div className="space-y-20 lg:space-y-28">
           {PROCS.map((p, i) => (
-            <article key={p.n} className="grid gap-10 md:grid-cols-12 md:items-center md:gap-0">
-              <div className={`md:col-span-6 ${i % 2 ? "md:order-2 md:col-start-7" : ""}`}>
-                <div className="img-hover">
-                  <RevealImage src={p.img} alt={p.name} width={1024} height={1280} className="aspect-[4/5]" />
-                </div>
+            <article key={p.n} ref={(element) => { articles.current[i] = element; }}>
+              <div className="img-hover aspect-[5/4]">
+                <img src={p.img} alt={p.name} width={1024} height={1280} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_35%]" />
               </div>
-              <div className={`md:col-span-5 ${i % 2 ? "md:order-1 md:col-start-1 md:pr-10" : "md:col-start-8"}`}>
-                <Reveal>
-                  <span className="eyebrow">Procedimento {p.n}</span>
-                </Reveal>
-                <Reveal delay={120} as="h3" className="mt-6 text-4xl md:text-6xl">
-                  {p.name}
-                </Reveal>
-                <Reveal delay={240}>
-                  <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">{p.text}</p>
-                </Reveal>
-                <Reveal delay={360}>
-                  <a
-                    href={waLink(`Olá! Vim pelo site e gostaria de saber mais sobre ${p.name}.`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-lux mt-10"
-                  >
-                    Saiba mais <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.4} />
-                  </a>
-                </Reveal>
+              <div className="mt-7 flex items-baseline gap-4">
+                <span className="font-serif text-2xl text-taupe">{p.n}</span>
+                <h3 className="!font-sans text-base uppercase">{p.name}</h3>
               </div>
+              <p className="mt-4 leading-relaxed text-muted-foreground">{p.text}</p>
+              <a
+                href={waLink(`Olá! Vim pelo site e gostaria de saber mais sobre ${p.name}.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-lux mt-6"
+              >
+                Saiba mais <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.4} />
+              </a>
             </article>
           ))}
         </div>
