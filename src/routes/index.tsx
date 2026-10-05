@@ -419,6 +419,29 @@ function Clinic() {
 
 /* ---------------- RESULTS ---------------- */
 function Results() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      const max = el.scrollWidth - el.clientWidth;
+      if (max <= 0) return;
+      setActive(Math.min(2, Math.max(0, Math.round((el.scrollLeft / max) * 2))));
+    };
+    el.addEventListener("scroll", onScroll, { passive: true });
+    return () => el.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const goTo = (i: number) => {
+    const el = trackRef.current;
+    const child = el?.children[i] as HTMLElement | undefined;
+    const first = el?.children[0] as HTMLElement | undefined;
+    if (!el || !child || !first) return;
+    el.scrollTo({ left: child.offsetLeft - first.offsetLeft, behavior: "smooth" });
+  };
+
   return (
     <section id="resultados" className="py-24 md:py-36">
       <div className="container-lux">
@@ -437,16 +460,39 @@ function Results() {
             </p>
           </Reveal>
         </div>
-        <div className="mt-16 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible">
-          {[
-            { label: "Resultado 01", before: resultado1Antes.url, after: resultado1Depois.url },
-            { label: "Resultado 02", before: resultado2Antes.url, after: resultado2Depois.url },
-            { label: "Resultado 03", before: resultado3Antes.url, after: resultado3Depois.url },
-          ].map((result, i) => (
-            <Reveal key={result.label} delay={i * 120} className="w-[80%] shrink-0 snap-start md:w-auto">
-              <BeforeAfter label={result.label} before={result.before} after={result.after} />
-            </Reveal>
-          ))}
+        <div className="relative mt-16">
+          <div
+            ref={trackRef}
+            className="-mr-6 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 md:mr-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0"
+          >
+            {[
+              { label: "Resultado 01", before: resultado1Antes.url, after: resultado1Depois.url },
+              { label: "Resultado 02", before: resultado2Antes.url, after: resultado2Depois.url },
+              { label: "Resultado 03", before: resultado3Antes.url, after: resultado3Depois.url },
+            ].map((result, i) => (
+              <Reveal key={result.label} delay={i * 120} threshold={0.05} className="w-[82%] shrink-0 snap-start md:w-auto">
+                <BeforeAfter label={result.label} before={result.before} after={result.after} />
+              </Reveal>
+            ))}
+          </div>
+          <div className="mt-5 flex items-center gap-4 md:hidden">
+            <div className="flex items-center gap-2" role="tablist" aria-label="Navegar entre resultados">
+              {[0, 1, 2].map((i) => (
+                <button
+                  key={i}
+                  type="button"
+                  role="tab"
+                  aria-selected={active === i}
+                  aria-label={`Ver ${["Resultado 01", "Resultado 02", "Resultado 03"][i]}`}
+                  onClick={() => goTo(i)}
+                  className={`h-px transition-all duration-500 ease-[var(--ease-lux)] ${
+                    active === i ? "w-8 bg-foreground" : "w-3 bg-foreground/30"
+                  }`}
+                />
+              ))}
+            </div>
+            <span className="text-[0.6875rem] uppercase tracking-[0.28em] text-muted-foreground">Arraste para o lado</span>
+          </div>
         </div>
         <Reveal className="mt-14">
           <PrimaryCta>Quero agendar minha avaliação</PrimaryCta>
