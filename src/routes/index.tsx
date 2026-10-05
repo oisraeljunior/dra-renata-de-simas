@@ -348,6 +348,29 @@ function MidCta() {
 }
 
 /* ---------------- CLINIC ---------------- */
+const CLINIC_SLIDES = [
+  {
+    src: clinica7.url,
+    alt: "Sala de atendimento com cadeira branca e janelas do teto ao chão",
+    caption: "Sala de atendimento",
+  },
+  {
+    src: clinica8.url,
+    alt: "Recepção da clínica com poltronas e o letreiro Renata de Simas",
+    caption: "Recepção",
+  },
+  {
+    src: clinica9.url,
+    alt: "Detalhe da bancada com potes de cristal e frascos de atendimento",
+    caption: "Detalhe da bancada",
+  },
+  {
+    src: clinica10.url,
+    alt: "Sala de procedimentos emoldurada por espelho orgânico",
+    caption: "Sala de procedimentos",
+  },
+];
+
 function Clinic() {
   return (
     <section id="clinica" className="bg-secondary py-24 md:py-36">
