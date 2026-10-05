@@ -18,8 +18,8 @@ import peelingAsset from "@/assets/peeling.jpeg.asset.json";
 import fiosAsset from "@/assets/fios_de_pdo.jpeg.asset.json";
 import resultado1Antes from "@/assets/resultado-1.png.asset.json";
 import resultado1Depois from "@/assets/resultado-1.1.png.asset.json";
-import resultado2Antes from "@/assets/resultado-2.png.asset.json";
-import resultado2Depois from "@/assets/resultado-2.1.png.asset.json";
+import resultado2Antes from "@/assets/resultado-2.1.png.asset.json";
+import resultado2Depois from "@/assets/resultado-2.png.asset.json";
 import resultado3Antes from "@/assets/resultado-3.png.asset.json";
 import resultado3Depois from "@/assets/resultado-3.1.png.asset.json";
 
