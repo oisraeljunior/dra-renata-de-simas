@@ -16,6 +16,12 @@ import mentoAsset from "@/assets/preenchimento_de_mento.jpeg.asset.json";
 import limpezaAsset from "@/assets/limpeza_de_pele.jpeg.asset.json";
 import peelingAsset from "@/assets/peeling.jpeg.asset.json";
 import fiosAsset from "@/assets/fios_de_pdo.jpeg.asset.json";
+import resultado1Antes from "@/assets/resultado-1.png.asset.json";
+import resultado1Depois from "@/assets/resultado-1.1.png.asset.json";
+import resultado2Antes from "@/assets/resultado-2.png.asset.json";
+import resultado2Depois from "@/assets/resultado-2.1.png.asset.json";
+import resultado3Antes from "@/assets/resultado-3.png.asset.json";
+import resultado3Depois from "@/assets/resultado-3.1.png.asset.json";
 
 const TITLE = "Renata de Simas | Estética Avançada em Navegantes SC";
 const DESC =
@@ -427,9 +433,13 @@ function Results() {
           </Reveal>
         </div>
         <div className="mt-16 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible">
-          {["Toxina botulínica", "Rinomodelação", "Fios de PDO"].map((l, i) => (
-            <Reveal key={l} delay={i * 120} className="w-[80%] shrink-0 snap-start md:w-auto">
-              <BeforeAfter label={l} />
+          {[
+            { label: "Resultado 01", before: resultado1Antes.url, after: resultado1Depois.url },
+            { label: "Resultado 02", before: resultado2Antes.url, after: resultado2Depois.url },
+            { label: "Resultado 03", before: resultado3Antes.url, after: resultado3Depois.url },
+          ].map((result, i) => (
+            <Reveal key={result.label} delay={i * 120} className="w-[80%] shrink-0 snap-start md:w-auto">
+              <BeforeAfter label={result.label} before={result.before} after={result.after} />
             </Reveal>
           ))}
         </div>
