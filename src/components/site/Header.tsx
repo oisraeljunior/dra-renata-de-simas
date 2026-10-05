@@ -35,7 +35,7 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-700 ${
-        scrolled ? "border-border bg-background/80 py-3 backdrop-blur-md" : "border-transparent py-6"
+        scrolled ? "border-border bg-background/85 py-3 backdrop-blur-md" : "border-transparent bg-background/60 py-6 backdrop-blur-[6px]"
       }`}
     >
       <div className="container-lux flex items-center justify-between">
