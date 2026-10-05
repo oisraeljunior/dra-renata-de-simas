@@ -477,7 +477,7 @@ function Results() {
           </div>
           {/* Mobile affordance: soft fade on the right edge plus a "keep swiping" hint */}
           <div aria-hidden className="pointer-events-none absolute inset-y-0 right-0 hidden w-14 bg-gradient-to-l from-background via-background/60 to-transparent max-md:block" />
-          <div className="mt-5 flex items-center justify-center gap-4 max-md:flex md:hidden">
+          <div className="mt-5 flex items-center justify-center gap-4 md:hidden">
             <div className="flex items-center gap-2" role="tablist" aria-label="Navegar entre resultados">
               {[0, 1, 2].map((i) => (
                 <button
