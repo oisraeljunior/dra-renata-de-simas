@@ -470,7 +470,7 @@ function Results() {
               { label: "Resultado 02", before: resultado2Antes.url, after: resultado2Depois.url },
               { label: "Resultado 03", before: resultado3Antes.url, after: resultado3Depois.url },
             ].map((result, i) => (
-              <Reveal key={result.label} delay={i * 120} className="w-[82%] shrink-0 snap-start md:w-auto">
+              <Reveal key={result.label} delay={i * 120} threshold={0.05} className="w-[82%] shrink-0 snap-start md:w-auto">
                 <BeforeAfter label={result.label} before={result.before} after={result.after} />
               </Reveal>
             ))}

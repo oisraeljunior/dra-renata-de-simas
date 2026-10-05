@@ -31,13 +31,16 @@ export function Reveal({
   delay = 0,
   className = "",
   as: Tag = "div",
+  threshold,
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
   as?: ElementType;
+  /** Optional custom IntersectionObserver threshold, e.g. for partially visible scroll cards. */
+  threshold?: number;
 }) {
-  const { ref, inView } = useInView<HTMLElement>();
+  const { ref, inView } = useInView<HTMLElement>(threshold);
   return (
     <Tag ref={ref} className={`reveal ${inView ? "is-in" : ""} ${className}`} style={{ transitionDelay: `${delay}ms` }}>
       {children}
