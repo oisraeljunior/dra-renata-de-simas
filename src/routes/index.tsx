@@ -11,7 +11,6 @@ import roomImg from "@/assets/clinic-room.jpg";
 import coffeeImg from "@/assets/clinic-coffee.jpg";
 import receptionImg from "@/assets/clinic-reception.jpg";
 import toxinaImg from "@/assets/proc-toxina.jpg";
-import preenchImg from "@/assets/proc-preenchimento.jpg";
 import fiosImg from "@/assets/proc-fios.jpg";
 import rinoImg from "@/assets/proc-rinomodelacao.jpg";
 import mentoImg from "@/assets/proc-mento.jpg";
@@ -409,7 +408,7 @@ function Results() {
           </Reveal>
         </div>
         <div className="mt-16 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible">
-          {["Toxina botulínica", "Preenchimento facial", "Fios de PDO"].map((l, i) => (
+          {["Toxina botulínica", "Rinomodelação", "Fios de PDO"].map((l, i) => (
             <Reveal key={l} delay={i * 120} className="w-[80%] shrink-0 snap-start md:w-auto">
               <BeforeAfter label={l} />
             </Reveal>
