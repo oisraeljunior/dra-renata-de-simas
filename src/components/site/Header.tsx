@@ -40,7 +40,7 @@ export function Header() {
     >
       <div
         aria-hidden
-        className={`pointer-events-none absolute inset-x-0 -top-px h-32 bg-gradient-to-b from-background/90 via-background/45 to-transparent transition-opacity duration-700 ${
+        className={`pointer-events-none absolute inset-x-0 -top-px -z-10 h-32 bg-gradient-to-b from-background/90 via-background/45 to-transparent transition-opacity duration-700 ${
           scrolled ? "opacity-0" : "opacity-100"
         }`}
       />
