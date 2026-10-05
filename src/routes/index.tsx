@@ -113,7 +113,7 @@ function Hero() {
             height={1080}
             eager
             delay={500}
-            className="hero-photo aspect-[4/5] lg:aspect-auto lg:h-full"
+            className="aspect-[4/5] lg:aspect-auto lg:h-full"
             imgClassName="object-[42%_center]"
           />
           <div
