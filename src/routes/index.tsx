@@ -107,10 +107,6 @@ function Hero() {
             className="hero-photo aspect-[4/5] lg:aspect-auto lg:h-full"
             imgClassName="object-[center_20%]"
           />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-y-0 left-0 hidden w-28 bg-gradient-to-r from-background to-transparent lg:block"
-          />
         </div>
       </div>
     </section>

@@ -178,8 +178,8 @@
 
 /* Hero photo dissolves into the page background instead of ending on a hard crop line. */
 @utility hero-photo {
-  -webkit-mask-image: linear-gradient(to bottom, #000 46%, transparent 94%);
-  mask-image: linear-gradient(to bottom, #000 46%, transparent 94%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 76%, transparent 99%);
+  mask-image: linear-gradient(to bottom, #000 76%, transparent 99%);
 }
 
 /* Keep the pinned procedure index fully visible on shorter desktop screens. */
