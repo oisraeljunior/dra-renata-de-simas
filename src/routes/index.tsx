@@ -456,7 +456,7 @@ function About() {
   return (
     <section id="renata" className="bg-primary text-primary-foreground">
       <div className="grid lg:grid-cols-2">
-        <RevealImage src={heroImg} alt="Retrato de Renata de Simas" width={1152} height={1440} className="aspect-[4/5] lg:aspect-auto lg:min-h-[100vh]" />
+        <RevealImage src={heroAsset.url} alt="Retrato de Renata de Simas" width={1080} height={1080} className="aspect-[4/5] lg:aspect-auto lg:min-h-[100vh]" imgClassName="object-[42%_center]" />
         <div className="flex items-center px-6 py-20 md:px-16 lg:px-20 xl:px-28">
           <div className="max-w-xl">
             <Reveal>
