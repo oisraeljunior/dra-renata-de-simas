@@ -463,7 +463,7 @@ function Results() {
         <div className="relative mt-16">
           <div
             ref={trackRef}
-            className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0"
+            className="-mr-6 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 md:mr-0 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0"
           >
             {[
               { label: "Resultado 01", before: resultado1Antes.url, after: resultado1Depois.url },
