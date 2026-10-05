@@ -5,7 +5,7 @@ import { Header, Logo } from "@/components/site/Header";
 import { Reveal, RevealImage, PrimaryCta, waLink } from "@/components/site/primitives";
 import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { Faq } from "@/components/site/Faq";
-import heroImg from "@/assets/hero-renata.jpg";
+import heroAsset from "@/assets/renata-hero.png.asset.json";
 import skinImg from "@/assets/skin-closeup.jpg";
 import roomImg from "@/assets/clinic-room.jpg";
 import coffeeImg from "@/assets/clinic-coffee.jpg";
@@ -107,14 +107,14 @@ function Hero() {
 
         <div className="relative order-1 lg:order-2 lg:-mr-[max(2.5rem,calc((100vw-1320px)/2+2.5rem))] lg:h-[100svh]">
           <RevealImage
-            src={heroImg}
-            alt="Renata de Simas em sua clínica de estética em Navegantes"
-            width={1152}
-            height={1440}
+            src={heroAsset.url}
+            alt="Dra. Renata de Simas, especialista em estética avançada em Navegantes"
+            width={1080}
+            height={1080}
             eager
             delay={500}
             className="hero-photo aspect-[4/5] lg:aspect-auto lg:h-full"
-            imgClassName="object-[center_20%]"
+            imgClassName="object-[42%_center]"
           />
           <div
             aria-hidden
