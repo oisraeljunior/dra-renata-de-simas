@@ -198,3 +198,10 @@
   .reveal, .reveal-img, .reveal-img img { transition: none !important; opacity: 1 !important; transform: none !important; clip-path: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* Hide Lovable Badge */
+#lovable-badge-container,
+#lovable-badge,
+a[href*="lovable.dev"] {
+  display: none !important;
+}

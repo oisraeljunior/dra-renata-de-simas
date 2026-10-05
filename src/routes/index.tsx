@@ -6,24 +6,44 @@ import { Reveal, RevealImage, PrimaryCta, waLink } from "@/components/site/primi
 import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { Faq } from "@/components/site/Faq";
 import { ClinicGallery } from "@/components/site/ClinicGallery";
-import heroAsset from "@/assets/renata-hero.png.asset.json";
-import skinImg from "@/assets/skin-closeup.jpg";
-import clinica7 from "@/assets/clinica-7.png.asset.json";
-import clinica8 from "@/assets/clinica-8.png.asset.json";
-import clinica9 from "@/assets/clinica-9.png.asset.json";
-import clinica10 from "@/assets/clinica-10.png.asset.json";
-import toxinaAsset from "@/assets/toxina_butolinica.jpeg.asset.json";
-import rinoAsset from "@/assets/rinomodelacao.jpeg.asset.json";
-import mentoAsset from "@/assets/preenchimento_de_mento.jpeg.asset.json";
-import limpezaAsset from "@/assets/limpeza_de_pele.jpeg.asset.json";
-import peelingAsset from "@/assets/peeling.jpeg.asset.json";
-import fiosAsset from "@/assets/fios_de_pdo.jpeg.asset.json";
-import resultado1Antes from "@/assets/resultado-1.png.asset.json";
-import resultado1Depois from "@/assets/resultado-1.1.png.asset.json";
-import resultado2Antes from "@/assets/resultado-2.1.png.asset.json";
-import resultado2Depois from "@/assets/resultado-2.png.asset.json";
-import resultado3Antes from "@/assets/resultado-3.png.asset.json";
-import resultado3Depois from "@/assets/resultado-3.1.png.asset.json";
+import filosofiaImg from "@/assets/Antes e Depois_ Perfil Facial Sculptado (1).png";
+
+import draImg from "@/assets/dra.jpg";
+import toxinaImg from "@/assets/toxina butolinica.jpeg";
+import rinoImg from "@/assets/rinomodelacao.jpeg";
+import mentoImg from "@/assets/preenchimento de mento.jpeg";
+import limpezaImg from "@/assets/limpeza de pele.jpeg";
+import peelingImg from "@/assets/peeling.jpeg";
+import fiosImg from "@/assets/fios de pdo.jpeg";
+import clinicaImg7 from "@/assets/7.png";
+import clinicaImg8 from "@/assets/8.png";
+import clinicaImg9 from "@/assets/9.png";
+import clinicaImg10 from "@/assets/10.png";
+import resImg1 from "@/assets/1.png";
+import resImg11 from "@/assets/1.1.png";
+import resImg21 from "@/assets/2.1.png";
+import resImg2 from "@/assets/2.png";
+import resImg3 from "@/assets/3.png";
+import resImg31 from "@/assets/3.1.png";
+
+// Imagens públicas (salve os arquivos na pasta public/ para aparecerem)
+const heroAsset = { url: draImg };
+const clinica7 = { url: clinicaImg7 };
+const clinica8 = { url: clinicaImg8 };
+const clinica9 = { url: clinicaImg9 };
+const clinica10 = { url: clinicaImg10 };
+const toxinaAsset = { url: toxinaImg };
+const rinoAsset = { url: rinoImg };
+const mentoAsset = { url: mentoImg };
+const limpezaAsset = { url: limpezaImg };
+const peelingAsset = { url: peelingImg };
+const fiosAsset = { url: fiosImg };
+const resultado1Antes = { url: resImg1 };
+const resultado1Depois = { url: resImg11 };
+const resultado2Antes = { url: resImg21 };
+const resultado2Depois = { url: resImg2 };
+const resultado3Antes = { url: resImg3 };
+const resultado3Depois = { url: resImg31 };
 
 const TITLE = "Renata de Simas | Estética Avançada em Navegantes SC";
 const DESC =
@@ -157,30 +177,30 @@ function Authority() {
 /* ---------------- PHILOSOPHY ---------------- */
 function Philosophy() {
   return (
-    <section className="py-24 md:py-36">
-      <div className="container-lux grid gap-14 lg:grid-cols-12 lg:items-end">
-        <div className="lg:col-span-7">
-          <Reveal>
-            <p className="eyebrow">Nossa filosofia</p>
-          </Reveal>
-          <Reveal delay={120} as="h2" className="mt-8 text-5xl leading-[1.02] md:text-7xl">
-            Beleza não é sobre mudar quem você é.
-          </Reveal>
-          <Reveal delay={240}>
-            <p className="mt-8 font-serif text-2xl italic leading-snug text-taupe md:text-4xl">
-              É sobre valorizar o que já existe de mais bonito em você.
-            </p>
-          </Reveal>
-          <Reveal delay={360}>
-            <p className="mt-10 max-w-lg leading-relaxed text-muted-foreground lg:ml-auto lg:mr-16">
-              Cada rosto possui características únicas. Por isso, cada tratamento começa com uma avaliação individual,
-              respeitando suas proporções, seus objetivos e, principalmente, sua naturalidade.
-            </p>
-          </Reveal>
+    <section className="bg-background">
+      <div className="grid lg:grid-cols-2">
+        <div className="flex items-center px-6 py-24 md:py-36 md:px-16 lg:px-20 xl:px-28">
+          <div className="max-w-xl xl:ml-auto xl:mr-8">
+            <Reveal>
+              <p className="eyebrow">Nossa filosofia</p>
+            </Reveal>
+            <Reveal delay={120} as="h2" className="mt-8 text-5xl leading-[1.02] md:text-7xl">
+              Beleza não é sobre mudar quem você é.
+            </Reveal>
+            <Reveal delay={240}>
+              <p className="mt-8 font-serif text-2xl italic leading-snug text-taupe md:text-4xl">
+                É sobre valorizar o que já existe de mais bonito em você.
+              </p>
+            </Reveal>
+            <Reveal delay={360}>
+              <p className="mt-10 leading-relaxed text-muted-foreground">
+                Cada rosto possui características únicas. Por isso, cada tratamento começa com uma avaliação individual,
+                respeitando suas proporções, seus objetivos e, principalmente, sua naturalidade.
+              </p>
+            </Reveal>
+          </div>
         </div>
-        <div className="lg:col-span-5">
-          <RevealImage src={skinImg} alt="Detalhe de pele natural e luminosa" width={1024} height={1280} className="aspect-[4/5] lg:translate-y-16" />
-        </div>
+        <RevealImage src={filosofiaImg} alt="Antes e Depois do Perfil Facial Sculptado" width={1024} height={1280} className="aspect-square lg:aspect-auto" imgClassName="object-cover object-right" />
       </div>
     </section>
   );
