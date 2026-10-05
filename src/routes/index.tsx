@@ -10,12 +10,12 @@ import skinImg from "@/assets/skin-closeup.jpg";
 import roomImg from "@/assets/clinic-room.jpg";
 import coffeeImg from "@/assets/clinic-coffee.jpg";
 import receptionImg from "@/assets/clinic-reception.jpg";
-import toxinaImg from "@/assets/proc-toxina.jpg";
-import fiosImg from "@/assets/proc-fios.jpg";
-import rinoImg from "@/assets/proc-rinomodelacao.jpg";
-import mentoImg from "@/assets/proc-mento.jpg";
-import limpezaImg from "@/assets/proc-limpeza.jpg";
-import peelingImg from "@/assets/proc-peeling.jpg";
+import toxinaAsset from "@/assets/toxina_butolinica.jpeg.asset.json";
+import rinoAsset from "@/assets/rinomodelacao.jpeg.asset.json";
+import mentoAsset from "@/assets/preenchimento_de_mento.jpeg.asset.json";
+import limpezaAsset from "@/assets/limpeza_de_pele.jpeg.asset.json";
+import peelingAsset from "@/assets/peeling.jpeg.asset.json";
+import fiosAsset from "@/assets/fios_de_pdo.jpeg.asset.json";
 
 const TITLE = "Renata de Simas | Estética Avançada em Navegantes SC";
 const DESC =
@@ -179,41 +179,60 @@ function Philosophy() {
 }
 
 /* ---------------- PROCEDURES ---------------- */
+// Real clinic photos: before/after composites, shown at their natural ratio so nothing is cropped.
 const PROCS = [
   {
     n: "01",
     name: "Toxina Botulínica",
-    img: toxinaImg,
+    img: toxinaAsset.url,
+    alt: "Antes e depois de toxina botulínica na testa",
+    w: 1320,
+    h: 1308,
     text: "Suaviza linhas de expressão e ajuda a prevenir marcas mais profundas, proporcionando uma aparência mais descansada e rejuvenescida sem perder a naturalidade.",
   },
   {
     n: "02",
     name: "Rinomodelação",
-    img: rinoImg,
+    img: rinoAsset.url,
+    alt: "Antes e depois de rinomodelação em vista de perfil",
+    w: 1025,
+    h: 1031,
     text: "Refina as proporções do nariz de forma não cirúrgica, harmonizando o perfil com o restante do rosto e respeitando a sua identidade.",
   },
   {
     n: "03",
     name: "Preenchimento de Mento",
-    img: mentoImg,
+    img: mentoAsset.url,
+    alt: "Antes e depois de preenchimento de mento",
+    w: 1320,
+    h: 1506,
     text: "Define o contorno do queixo e melhora o equilíbrio do perfil, trazendo mais harmonia às proporções faciais de maneira sutil e natural.",
   },
   {
     n: "04",
     name: "Limpeza de Pele",
-    img: limpezaImg,
+    img: limpezaAsset.url,
+    alt: "Limpeza de pele com extração realizada em consultório",
+    w: 1188,
+    h: 1272,
     text: "Renova e purifica a pele, removendo impurezas e células mortas para devolver luminosidade, viço e maciez ao rosto.",
   },
   {
     n: "05",
     name: "Peeling",
-    img: peelingImg,
+    img: peelingAsset.url,
+    alt: "Aplicação de máscara de peeling no rosto",
+    w: 1290,
+    h: 1785,
     text: "Estimula a renovação celular para uniformizar o tom da pele, suavizar manchas e texturas e revelar uma pele mais luminosa.",
   },
   {
     n: "06",
     name: "Fios de PDO",
-    img: fiosImg,
+    img: fiosAsset.url,
+    alt: "Antes e depois de fios de PDO na região da bochecha",
+    w: 1320,
+    h: 1296,
     text: "Estimulam a produção de colágeno e promovem maior firmeza da pele, auxiliando na redução da flacidez e na redefinição dos contornos de forma progressiva.",
   },
 ];
@@ -273,8 +292,8 @@ function Procedures() {
         <div className="space-y-20 lg:space-y-28">
           {PROCS.map((p, i) => (
             <article key={p.n} ref={(element) => { articles.current[i] = element; }}>
-              <div className="img-hover aspect-[5/4]">
-                <img src={p.img} alt={p.name} width={1024} height={1280} loading="lazy" decoding="async" className="h-full w-full object-cover object-[center_35%]" />
+              <div className="img-hover">
+                <img src={p.img} alt={p.alt} width={p.w} height={p.h} loading="lazy" decoding="async" className="h-auto w-full" />
               </div>
               <div className="mt-7 flex items-baseline gap-4">
                 <span className="font-serif text-2xl text-taupe">{p.n}</span>
