@@ -66,7 +66,8 @@ export function RevealImage({
 }) {
   const { ref, inView } = useInView<HTMLDivElement>(0.1);
   return (
-    <div ref={ref} className={`reveal-img overflow-hidden ${inView ? "is-in" : ""} ${className}`} style={{ transitionDelay: `${delay}ms` }}>
+    <div ref={ref} className={className}>
+      <div className={`reveal-img h-full w-full overflow-hidden ${inView ? "is-in" : ""}`} style={{ transitionDelay: `${delay}ms` }}>
       <img
         src={src}
         alt={alt}
@@ -77,6 +78,7 @@ export function RevealImage({
         className={`h-full w-full object-cover ${imgClassName}`}
         style={{ transitionDelay: `${delay}ms` }}
       />
+      </div>
     </div>
   );
 }

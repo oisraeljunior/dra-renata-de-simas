@@ -71,11 +71,11 @@ function Hero() {
   return (
     <section className="relative min-h-[100svh] pt-28 lg:pt-0">
       <div className="container-lux grid min-h-[100svh] items-center gap-12 lg:grid-cols-[45fr_55fr] lg:gap-0">
-        <div className="relative z-10 order-2 pb-16 lg:order-1 lg:pr-16 lg:pb-0">
+        <div className="relative z-10 order-2 pb-16 lg:order-1 lg:pr-16 lg:pt-24 lg:pb-0">
           <Reveal delay={100}>
             <p className="eyebrow">Estética avançada • Navegantes/SC</p>
           </Reveal>
-          <Reveal delay={250} as="h1" className="mt-8 text-[3.2rem] leading-[0.95] md:text-7xl xl:text-[6.2rem]">
+          <Reveal delay={250} as="h1" className="mt-8 text-[3.2rem] leading-[0.95] md:text-7xl xl:text-[5.4rem]">
             Sua melhor versão,
             <br />
             <em className="font-light text-taupe">sem deixar</em>
