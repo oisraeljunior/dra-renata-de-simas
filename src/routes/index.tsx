@@ -5,7 +5,7 @@ import { Header, Logo } from "@/components/site/Header";
 import { Reveal, RevealImage, PrimaryCta, waLink } from "@/components/site/primitives";
 import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { Faq } from "@/components/site/Faq";
-import heroImg from "@/assets/hero-renata.jpg";
+import heroAsset from "@/assets/renata-hero.png.asset.json";
 import skinImg from "@/assets/skin-closeup.jpg";
 import roomImg from "@/assets/clinic-room.jpg";
 import coffeeImg from "@/assets/clinic-coffee.jpg";
@@ -85,7 +85,7 @@ function Hero() {
           <Reveal delay={100}>
             <p className="eyebrow">Estética avançada • Navegantes/SC</p>
           </Reveal>
-          <Reveal delay={250} as="h1" className="mt-8 text-[3.2rem] leading-[0.95] md:text-7xl lg:text-[4.6rem] xl:text-[5.2rem]">
+          <Reveal delay={250} as="h1" className="hero-title mt-8 text-[3.2rem] leading-[0.95] md:text-7xl lg:text-[4.6rem] xl:text-[5.2rem]">
             Sua melhor versão,
             <br />
             <em className="font-light text-taupe">sem deixar</em>
@@ -93,11 +93,11 @@ function Hero() {
             de ser você.
           </Reveal>
           <Reveal delay={450}>
-            <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p className="hero-intro mt-8 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
               Tratamentos personalizados para realçar sua beleza com equilíbrio, segurança e naturalidade.
             </p>
           </Reveal>
-          <Reveal delay={600} className="mt-10 flex flex-wrap items-center gap-8">
+          <Reveal delay={600} className="hero-actions mt-10 flex flex-wrap items-center gap-8">
             <PrimaryCta>Agendar avaliação</PrimaryCta>
             <a href="#procedimentos" className="link-lux">
               Conhecer procedimentos
@@ -105,16 +105,16 @@ function Hero() {
           </Reveal>
         </div>
 
-        <div className="relative order-1 lg:order-2 lg:-mr-[max(2.5rem,calc((100vw-1320px)/2+2.5rem))] lg:h-[100svh]">
+        <div className="relative order-1 lg:order-2 lg:-mr-[max(2.5rem,calc((100vw-1320px)/2+2.5rem))] lg:self-stretch">
           <RevealImage
-            src={heroImg}
-            alt="Renata de Simas em sua clínica de estética em Navegantes"
-            width={1152}
-            height={1440}
+            src={heroAsset.url}
+            alt="Dra. Renata de Simas, especialista em estética avançada em Navegantes"
+            width={1080}
+            height={1080}
             eager
             delay={500}
-            className="hero-photo aspect-[4/5] lg:aspect-auto lg:h-full"
-            imgClassName="object-[center_20%]"
+            className="aspect-[4/5] lg:aspect-auto lg:h-full"
+            imgClassName="object-[42%_center]"
           />
           <div
             aria-hidden
@@ -456,7 +456,7 @@ function About() {
   return (
     <section id="renata" className="bg-primary text-primary-foreground">
       <div className="grid lg:grid-cols-2">
-        <RevealImage src={heroImg} alt="Retrato de Renata de Simas" width={1152} height={1440} className="aspect-[4/5] lg:aspect-auto lg:min-h-[100vh]" />
+        <RevealImage src={heroAsset.url} alt="Retrato de Renata de Simas" width={1080} height={1080} className="aspect-square lg:aspect-auto" imgClassName="object-[55%_center]" />
         <div className="flex items-center px-6 py-20 md:px-16 lg:px-20 xl:px-28">
           <div className="max-w-xl">
             <Reveal>

@@ -35,9 +35,15 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-700 ${
-        scrolled ? "border-border bg-background/80 py-3 backdrop-blur-md" : "border-transparent py-6"
+        scrolled ? "border-border bg-background/85 py-3 backdrop-blur-md" : "border-transparent py-6"
       }`}
     >
+      <div
+        aria-hidden
+        className={`pointer-events-none absolute inset-x-0 -top-px -z-10 h-32 bg-gradient-to-b from-background/90 via-background/45 to-transparent transition-opacity duration-700 ${
+          scrolled ? "opacity-0" : "opacity-100"
+        }`}
+      />
       <div className="container-lux flex items-center justify-between">
         <Logo />
         <nav className="hidden items-center gap-9 lg:flex" aria-label="Principal">
