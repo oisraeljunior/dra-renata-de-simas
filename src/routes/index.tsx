@@ -11,8 +11,11 @@ import roomImg from "@/assets/clinic-room.jpg";
 import coffeeImg from "@/assets/clinic-coffee.jpg";
 import receptionImg from "@/assets/clinic-reception.jpg";
 import toxinaImg from "@/assets/proc-toxina.jpg";
-import preenchImg from "@/assets/proc-preenchimento.jpg";
 import fiosImg from "@/assets/proc-fios.jpg";
+import rinoImg from "@/assets/proc-rinomodelacao.jpg";
+import mentoImg from "@/assets/proc-mento.jpg";
+import limpezaImg from "@/assets/proc-limpeza.jpg";
+import peelingImg from "@/assets/proc-peeling.jpg";
 
 const TITLE = "Renata de Simas | Estética Avançada em Navegantes SC";
 const DESC =
@@ -185,12 +188,30 @@ const PROCS = [
   },
   {
     n: "02",
-    name: "Preenchimento Facial",
-    img: preenchImg,
-    text: "Ajuda a devolver volumes, suavizar rugas e redefinir contornos, sempre respeitando a harmonia e as proporções do rosto.",
+    name: "Rinomodelação",
+    img: rinoImg,
+    text: "Refina as proporções do nariz de forma não cirúrgica, harmonizando o perfil com o restante do rosto e respeitando a sua identidade.",
   },
   {
     n: "03",
+    name: "Preenchimento de Mento",
+    img: mentoImg,
+    text: "Define o contorno do queixo e melhora o equilíbrio do perfil, trazendo mais harmonia às proporções faciais de maneira sutil e natural.",
+  },
+  {
+    n: "04",
+    name: "Limpeza de Pele",
+    img: limpezaImg,
+    text: "Renova e purifica a pele, removendo impurezas e células mortas para devolver luminosidade, viço e maciez ao rosto.",
+  },
+  {
+    n: "05",
+    name: "Peeling",
+    img: peelingImg,
+    text: "Estimula a renovação celular para uniformizar o tom da pele, suavizar manchas e texturas e revelar uma pele mais luminosa.",
+  },
+  {
+    n: "06",
     name: "Fios de PDO",
     img: fiosImg,
     text: "Estimulam a produção de colágeno e promovem maior firmeza da pele, auxiliando na redução da flacidez e na redefinição dos contornos de forma progressiva.",
@@ -387,7 +408,7 @@ function Results() {
           </Reveal>
         </div>
         <div className="mt-16 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible">
-          {["Toxina botulínica", "Preenchimento facial", "Fios de PDO"].map((l, i) => (
+          {["Toxina botulínica", "Rinomodelação", "Fios de PDO"].map((l, i) => (
             <Reveal key={l} delay={i * 120} className="w-[80%] shrink-0 snap-start md:w-auto">
               <BeforeAfter label={l} />
             </Reveal>
