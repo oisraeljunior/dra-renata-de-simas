@@ -105,7 +105,7 @@ function Hero() {
           </Reveal>
         </div>
 
-        <div className="relative order-1 lg:order-2 lg:-mr-[max(2.5rem,calc((100vw-1320px)/2+2.5rem))] lg:h-[100svh]">
+        <div className="relative order-1 lg:order-2 lg:-mr-[max(2.5rem,calc((100vw-1320px)/2+2.5rem))] lg:self-stretch">
           <RevealImage
             src={heroAsset.url}
             alt="Dra. Renata de Simas, especialista em estética avançada em Navegantes"
