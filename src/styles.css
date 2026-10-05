@@ -70,6 +70,7 @@
 @layer base {
   * { border-color: var(--color-border); }
   html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 6.5rem; }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);

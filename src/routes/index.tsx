@@ -5,11 +5,13 @@ import { Header, Logo } from "@/components/site/Header";
 import { Reveal, RevealImage, PrimaryCta, waLink } from "@/components/site/primitives";
 import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { Faq } from "@/components/site/Faq";
+import { ClinicGallery } from "@/components/site/ClinicGallery";
 import heroAsset from "@/assets/renata-hero.png.asset.json";
 import skinImg from "@/assets/skin-closeup.jpg";
-import roomImg from "@/assets/clinic-room.jpg";
-import coffeeImg from "@/assets/clinic-coffee.jpg";
-import receptionImg from "@/assets/clinic-reception.jpg";
+import clinica7 from "@/assets/clinica-7.png.asset.json";
+import clinica8 from "@/assets/clinica-8.png.asset.json";
+import clinica9 from "@/assets/clinica-9.png.asset.json";
+import clinica10 from "@/assets/clinica-10.png.asset.json";
 import toxinaAsset from "@/assets/toxina_butolinica.jpeg.asset.json";
 import rinoAsset from "@/assets/rinomodelacao.jpeg.asset.json";
 import mentoAsset from "@/assets/preenchimento_de_mento.jpeg.asset.json";
@@ -346,6 +348,29 @@ function MidCta() {
 }
 
 /* ---------------- CLINIC ---------------- */
+const CLINIC_SLIDES = [
+  {
+    src: clinica7.url,
+    alt: "Sala de atendimento com cadeira branca e janelas do teto ao chão",
+    caption: "Sala de atendimento",
+  },
+  {
+    src: clinica8.url,
+    alt: "Recepção da clínica com poltronas e o letreiro Renata de Simas",
+    caption: "Recepção",
+  },
+  {
+    src: clinica9.url,
+    alt: "Detalhe da bancada com potes de cristal e frascos de atendimento",
+    caption: "Detalhe da bancada",
+  },
+  {
+    src: clinica10.url,
+    alt: "Sala de procedimentos emoldurada por espelho orgânico",
+    caption: "Sala de procedimentos",
+  },
+];
+
 function Clinic() {
   return (
     <section id="clinica" className="bg-secondary py-24 md:py-36">
@@ -368,32 +393,12 @@ function Clinic() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-6 md:mt-24 md:grid-cols-12 md:gap-8">
-          <figure className="md:col-span-8">
-            <div className="img-hover">
-              <RevealImage src={roomImg} alt="Sala de atendimento com janelas do teto ao chão" width={1600} height={1072} className="aspect-[3/2]" />
-            </div>
-            <figcaption className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              Sala de atendimento — Centro de Navegantes
-            </figcaption>
-          </figure>
-          <div className="flex flex-col gap-6 md:col-span-4 md:gap-8 md:pt-32">
-            <figure>
-              <div className="img-hover">
-                <RevealImage src={coffeeImg} alt="Café com chocolate na recepção" width={896} height={1120} className="aspect-[4/5]" delay={150} />
-              </div>
-              <figcaption className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">Café com chocolate na recepção</figcaption>
-            </figure>
+        <div className="mt-16 grid gap-12 md:mt-24 md:grid-cols-12 md:items-start">
+          <div className="md:col-span-5">
+            <Reveal>
+              <ClinicGallery slides={CLINIC_SLIDES} />
+            </Reveal>
           </div>
-        </div>
-
-        <div className="mt-16 grid gap-12 md:grid-cols-12 md:items-start">
-          <figure className="md:col-span-5">
-            <div className="img-hover">
-              <RevealImage src={receptionImg} alt="Recepção da clínica" width={1024} height={768} className="aspect-[4/3]" />
-            </div>
-            <figcaption className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">Recepção</figcaption>
-          </figure>
           <div className="space-y-8 md:col-span-6 md:col-start-7">
             {[
               "Localizada no centro de Navegantes, com fácil acesso.",
@@ -615,7 +620,7 @@ function FaqSection() {
 function FinalCta() {
   return (
     <section className="relative isolate overflow-hidden bg-primary text-primary-foreground">
-      <img src={roomImg} alt="" aria-hidden width={1600} height={1072} loading="lazy" className="absolute inset-0 -z-10 h-full w-full object-cover opacity-35" />
+      <img src={clinica7.url} alt="" aria-hidden width={1080} height={1080} loading="lazy" className="absolute inset-0 -z-10 h-full w-full object-cover opacity-35" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-primary via-primary/70 to-primary/30" />
       <div className="container-lux py-32 md:py-48">
         <div className="max-w-3xl">
