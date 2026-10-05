@@ -176,6 +176,15 @@
   &:hover img { transform: scale(1.03); }
 }
 
+/* Keep the pinned procedure index fully visible on shorter desktop screens. */
+@media (min-width: 1024px) and (max-height: 760px) {
+  .procedures-heading { font-size: 3rem; margin-top: 1.25rem; }
+  .procedures-description { margin-top: 1.25rem; }
+  .procedures-index { margin-top: 2rem; }
+  .procedures-index > li { font-size: 1.5rem; }
+  .procedures-index > li + li { margin-top: 1.25rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal-img, .reveal-img img { transition: none !important; opacity: 1 !important; transform: none !important; clip-path: none !important; }
   html { scroll-behavior: auto; }
