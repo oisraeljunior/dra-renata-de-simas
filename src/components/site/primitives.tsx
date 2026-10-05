@@ -40,7 +40,7 @@ export function Reveal({
   /** Optional custom IntersectionObserver threshold, e.g. for partially visible scroll cards. */
   threshold?: number;
 }) {
-  const { ref, inView } = useInView<HTMLElement>(threshold);
+  const { ref, inView } = useInView<HTMLElement>(threshold ?? 0.18);
   return (
     <Tag ref={ref} className={`reveal ${inView ? "is-in" : ""} ${className}`} style={{ transitionDelay: `${delay}ms` }}>
       {children}
